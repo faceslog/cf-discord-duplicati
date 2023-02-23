@@ -1,0 +1,19 @@
+{
+    "name": "cf-worker-duplicati",
+    "author": "faceslog",
+    "private": true,
+    "version": "1.0.0",
+    "description": "package for creating workers templates",
+    "main": "index.js",
+    "scripts": {
+        "serve": "npx wrangler dev"
+    },
+    "license": "GPL3",
+    "devDependencies": {
+        "prettier": "^1.17.0"
+    },
+    "dependencies": {
+        "itty-router": "^2.1.9",
+        "serverless-cloudflare-workers": "^1.2.0"
+    }
+}

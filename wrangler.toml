@@ -1,0 +1,8 @@
+name = "router"
+type = "webpack"
+main = "src/index.js"
+
+account_id = ""
+workers_dev = true
+route = ""
+zone_id = ""
