@@ -57,9 +57,6 @@ function getIcon(parsedResultStr) {
     icon['Uknown'] = ':grey_question:';
     icon['FATAL'] = ':fire:';
 
-    console.log(parsedResultStr);
-    console.log(icon[parsedResultStr]);
-
     return icon[parsedResultStr];
 }
 
