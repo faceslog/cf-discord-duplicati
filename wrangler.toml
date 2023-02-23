@@ -1,8 +1,9 @@
-name = "router"
+name = "duplicati-notify"
 type = "webpack"
 main = "src/index.js"
+compatibility_date = "2023-02-23"
 
-account_id = ""
-workers_dev = true
-route = ""
-zone_id = ""
+workers_dev = false
+
+route = { pattern = "duplicati.example.org", custom_domain = true }
+account_id = "YOUR_ACCOUNT_ID"

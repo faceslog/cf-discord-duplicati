@@ -6,7 +6,8 @@
     "description": "package for creating workers templates",
     "main": "index.js",
     "scripts": {
-        "serve": "npx wrangler dev"
+        "dev": "npx wrangler dev",
+        "publish": "npx wrangler publish"
     },
     "license": "GPL3",
     "devDependencies": {

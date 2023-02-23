@@ -75,7 +75,7 @@ export function createEmbed(name, data) {
                 color: getColor(data.ParsedResult),
                 author: {
                     name: "Duplicati Proxy Notifier",
-                    url: "https://discord.com"
+                    url: "https://github.com/faceslog/cf-worker-duplicati"
                 },
                 footer: {
                     text: "Duplicati - Cloudflare Proxy Notifier - faceslog.com",
