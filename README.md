@@ -6,7 +6,7 @@ This Cloudflare worker provides a webhook endpoint for Duplicati backups that pr
 
 ![Example](./assets/webhook.jpg)
 
-*Note is `.assets/example_data.json` you can see what data Duplicati sends if you ever wish to tweaks the script*
+*Note is `./assets/example_data.json` you can see what data Duplicati sends if you ever wish to tweaks the script*
 
 ## A- Create the Webhook URL
 
