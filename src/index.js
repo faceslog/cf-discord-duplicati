@@ -1,7 +1,6 @@
 import { Router } from 'itty-router'
 import { createEmbed } from './utils';
 
-
 // Create a new router
 const router = Router()
 
@@ -9,8 +8,8 @@ const router = Router()
 Our index route, a simple hello world.
 */
 router.get("/", () => {
-  return new Response("Welcome to the Duplicati Proxy Notifier powered by a Cloudflared worker !")
-})
+  return new Response("Welcome ! Please check https://github.com/faceslog/cf-worker-duplicati")
+});
 
 router.post("/api/:name/:channel/:webhook", async (request) => {
 
@@ -61,7 +60,7 @@ router.post("/api/:name/:channel/:webhook", async (request) => {
 This is the last route we define, it will match anything that hasn't hit a route we've defined
 above, therefore it's useful as a 404 (and avoids us hitting worker exceptions, so make sure to include it!).
 */
-router.all("*", () => new Response("404, not found!", { status: 404 }))
+router.all("*", () => new Response("404, not found!", { status: 404 }));
 
 /*
 This snippet ties our worker to the router we deifned above, all incoming requests
@@ -69,4 +68,4 @@ are passed to the router where your routes are called and the response is sent.
 */
 addEventListener('fetch', (e) => {
   e.respondWith(router.handle(e.request))
-})
+});
