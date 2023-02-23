@@ -1,8 +1,8 @@
 # 💾 Cloudflare Worker Duplicati Discord Notifications
 
-You can use the example one at: https://duplicati.faceslog.tech/
+This Cloudflare worker provides an endpoint for Duplicati backups that proxies notifications to a Discord channel using a webhook. With this worker, you can ensure that you receive notifications for all of your backup events. If you'd like to host your own worker or use the example one, follow the instructions below.
 
-This Cloudflare worker provides a webhook endpoint for Duplicati backups that proxies notifications to a Discord channel. With this worker, you can ensure that you receive notifications for all of your backup events. If you'd like to host your own webhook endpoint or use the example one, follow the instructions below.
+You can use the example one at: https://duplicati.faceslog.tech/
 
 ![Example](./assets/webhook.jpg)
 
@@ -27,7 +27,7 @@ You should keep only:
 ```
 This part of the URL represents the `channelId/webhookId`.
 
-**3-** Add a name to identify your backup before the `MyBackUpName/channelId/webhookId`. This name will be displayed in the webhook embed.
+**3-** Add a name to identify your backup `MyBackUpName/channelId/webhookId`. This name will be displayed in the webhook embed.
 
 **4-** Append `MyBackUpName/channelId/webhookId` to `https://duplicati.faceslog.tech/api/`.
 
