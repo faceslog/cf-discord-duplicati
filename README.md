@@ -77,7 +77,7 @@ If you'd like to host your own webhook endpoint instead of using the example one
    ```
 
 3. Edit the `wrangler.toml` file:
-   - Replace the `pattern` value under `[routes]` with your own domain name.
+   - Replace the `pattern` value `duplicati.example.org` with your own domain name.
 
    For more detailed instructions on how to configure your Cloudflare worker, please see the [official documentation](https://developers.cloudflare.com/workers/wrangler/configuration/).
 
