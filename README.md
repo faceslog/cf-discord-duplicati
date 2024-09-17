@@ -61,25 +61,60 @@ To add the notification URL to Duplicati, follow these steps:
 
 Your backup should now send a notification to the Discord channel you set up whenever it runs. If you want to receive notifications for multiple backups, you can repeat the steps for each backup and create a unique URL for each one.
 
-## Deploy your own worker: 
+## Deploy your own worker
 
 If you'd like to host your own webhook endpoint instead of using the example one, you can follow these steps:
 
-**1-** Clone this repository:
+1. Clone this repository:
+   ```
+   git clone https://github.com/faceslog/cf-worker-duplicati.git
+   cd cf-worker-duplicati
+   ```
+
+2. Install the required dependencies:
+   ```
+   npm install
+   ```
+
+3. Edit the `wrangler.toml` file:
+   - Replace the `pattern` value under `[routes]` with your own domain name.
+
+   For more detailed instructions on how to configure your Cloudflare worker, please see the [official documentation](https://developers.cloudflare.com/workers/wrangler/configuration/).
+
+4. Log in to your Cloudflare account using Wrangler:
+   ```sh
+   npx wrangler login
+
+   # On a remote machine check: https://developers.cloudflare.com/workers/wrangler/commands/#use-wrangler-login-on-a-remote-machine
+   ```
+
+5. Once you've configured your worker, you can deploy it by running:
+   ```
+   npm run deploy
+   ```
+
+6. After your worker is deployed, you can use the URL it provides to set up notifications in Duplicati, as described in the previous section of this README. Make sure to use the same domain as the one in your `wrangler.toml`.
+
+### Development
+
+To run the worker locally for development:
 
 ```
-git clone https://github.com/faceslog/cf-worker-duplicati.git
+npm run dev
 ```
 
-**2-** Install the required dependencies by running `npm install`.
+This will start a local server that simulates the Cloudflare Workers environment, allowing you to test your changes before deployment.
 
-**3-** Edit the `wrangler.toml` file by replacing example.org with your own domain name. You'll also need to add your Cloudflare account ID, which you can find in the Cloudflare dashboard. (https://developers.cloudflare.com/fundamentals/get-started/basic-tasks/find-account-and-zone-ids/)
+### Troubleshooting
 
-For more detailed instructions on how to configure your Cloudflare worker, please see the [official documentation](https://developers.cloudflare.com/workers/wrangler/configuration/).
+If you encounter any issues during deployment:
 
-**4-** Once you've configured your worker, you can deploy it by running `npm run publish`.
+1. Ensure that you're logged in to the correct Cloudflare account.
+2. Check that your `wrangler.toml` file is correctly configured.
+3. Verify that you have the necessary permissions to deploy Workers in your Cloudflare account.
+4. If you're using environment variables for sensitive information, make sure they're properly set.
 
-After your worker is deployed, you can use the URL it provides to set up notifications in Duplicati, as described in the previous section of this README. (Make sure to use the same domain as the one in your wrangler.toml)
+For more help, consult the [Cloudflare Workers documentation](https://developers.cloudflare.com/workers/) or open an issue in this repository.
 
 ## Others
 
