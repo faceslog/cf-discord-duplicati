@@ -62,6 +62,28 @@ function getIcon(parsedResultStr) {
 
 export function createEmbed(name, data) {
 
+    if (!data.hasOwnProperty('ParsedResult')) {
+
+        let embed = {
+            embeds: [
+                {
+                    title: `:fire: ${name} -> FATAL :fire:`,
+                    description: "No ParsedResult found",
+                    color: 0xFF0000,
+                    author: {
+                        name: "Duplicati Proxy Notifier",
+                        url: "https://github.com/faceslog/cf-worker-duplicati"
+                    },
+                    footer: {
+                        text: "Duplicati - Cloudflare Proxy Notifier - faceslog.com"
+                    }
+                }
+            ]
+        }
+
+        return embed;
+    }
+
    const icon = getIcon(data.ParsedResult);
 
     let embed = {
@@ -76,7 +98,6 @@ export function createEmbed(name, data) {
                 },
                 footer: {
                     text: "Duplicati - Cloudflare Proxy Notifier - faceslog.com",
-                    icon_url: "https://faceslog.com/landing/profile.webp"
                 },
                 fields: [
                     {
