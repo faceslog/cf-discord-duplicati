@@ -114,7 +114,9 @@ If you encounter any issues during deployment:
 3. Verify that you have the necessary permissions to deploy Workers in your Cloudflare account.
 4. If you're using environment variables for sensitive information, make sure they're properly set.
 
-For more help, consult the [Cloudflare Workers documentation](https://developers.cloudflare.com/workers/) or open an issue in this repository.
+#### Cloudflare WAF and Server IP Considerations: 
+
+When deploying or sending requests to your worker from a server, you may encounter issues with Cloudflare's Web Application Firewall (WAF). The WAF might block requests originating from server IP addresses as a security measure. To ensure smooth operation, consider creating a WAF bypass rule for your worker's specific path.
 
 ## Others
 
